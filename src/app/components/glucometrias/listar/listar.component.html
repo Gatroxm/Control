@@ -1,0 +1,24 @@
+<div class="container my-5"> 
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Resulatdo </th>
+                    <th scope="col">Fececha </th>
+                    <th scope="col">Horario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let calculo of glucometria; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ calculo.resultado}}</td>
+                    <td>{{ calculo.fecha }}</td>
+                    <td>{{ calculo.horario }}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
