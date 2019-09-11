@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { GlucometriaDiaria } from '../interfaces/control-deavetes.interface';
+import { GlucometriaDiaria } from '../interfaces/control-deabetes.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ControlDeavetesService {
+export class ControlDeabetesService {
 
   private itemsCollection: AngularFirestoreCollection<any>;
   

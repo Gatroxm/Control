@@ -11,7 +11,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 // servicios
-import { ControlDeavetesService } from './services/control-deavetes.service';
+import { ControlDeabetesService } from './services/control-deabetes.service';
 import { environment } from 'src/environments/environment';
 import { ListarComponent } from './components/glucometrias/listar/listar.component';
 import { AgregarComponent } from './components/glucometrias/agregar/agregar.component';
@@ -36,7 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ControlDeavetesService],
+  providers: [ControlDeabetesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

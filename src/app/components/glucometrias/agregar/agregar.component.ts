@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ControlDeavetesService } from 'src/app/services/control-deavetes.service';
+import { ControlDeabetesService } from 'src/app/services/control-deabetes.service';
 
 @Component({
   selector: 'app-agregar',
@@ -13,7 +13,7 @@ export class AgregarComponent implements OnInit {
   public save: boolean = false;
   public message: string;
 
-  constructor( private control: ControlDeavetesService) { }
+  constructor( private control: ControlDeabetesService) { }
 
   ngOnInit() {
     this.forma = new FormGroup({

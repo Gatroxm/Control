@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlDeavetesService } from 'src/app/services/control-deavetes.service';
-import { GlucometriaDiaria } from 'src/app/interfaces/control-deavetes.interface';
+import { ControlDeabetesService } from 'src/app/services/control-deabetes.service';
+import { GlucometriaDiaria } from 'src/app/interfaces/control-deabetes.interface';
 
 @Component({
   selector: 'app-listar',
@@ -10,7 +10,7 @@ import { GlucometriaDiaria } from 'src/app/interfaces/control-deavetes.interface
 export class ListarComponent implements OnInit {
 
   public glucometria;
-  constructor( private control: ControlDeavetesService) { }
+  constructor( private control: ControlDeabetesService) { }
 
   ngOnInit() {
     this.control.cargarGlucometrias().subscribe( (gluco) => {
