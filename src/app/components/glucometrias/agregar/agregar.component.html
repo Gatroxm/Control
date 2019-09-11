@@ -1,19 +1,19 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-12">
-            <h1>Ingresar glucomentrias</h1>
-            <form>
+            <h1>Ingresar glucomentria diaria</h1>
+            <form [formGroup]="forma" (ngSubmit)="guardarCambios()" novalidate="novalidate" class="mb-5">
                 <div class="form-group">
                   <label for="valor">Valor</label>
-                  <input type="number" class="form-control" id="valor" placeholder="Ingrese valor">
+                  <input type="number" class="form-control" id="valor" placeholder="Ingrese valor" formControlName="valor">
                 </div>
                 <div class="form-group">
                   <label for="fecha">Fecha</label>
-                  <input type="date" class="form-control" id="fecha" placeholder="Fecha">
+                  <input type="date" class="form-control" id="fecha" placeholder="Fecha" formControlName="fecha">
                 </div>
                 <div class="form-group">
                     <label for="horario">Horario</label>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" class="form-control" formControlName="horario">
                         <option value="Ayunas">Ayunas</option>
                         <option value="2 horas despues del desayuno">2 horas despues del desayuno</option>
                         <option value="Antes del Almuerzo">Antes del Almuerzo</option>
@@ -25,6 +25,13 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
               </form>
+              
+              <div class="alert alert-success alert-dismissible fade show mt-5" role="alert" *ngIf="save">
+                <strong>Excelente!!!</strong> {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
         </div>
     </div>
-</div>

@@ -15,6 +15,7 @@ import { ControlDeavetesService } from './services/control-deavetes.service';
 import { environment } from 'src/environments/environment';
 import { ListarComponent } from './components/glucometrias/listar/listar.component';
 import { AgregarComponent } from './components/glucometrias/agregar/agregar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { AgregarComponent } from './components/glucometrias/agregar/agregar.comp
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ControlDeavetesService],
   bootstrap: [AppComponent]

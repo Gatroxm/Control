@@ -19,8 +19,9 @@ export class ControlDeavetesService {
 
   }
 
-  agregarGlucometria( respuesta: GlucometriaDiaria) {
-    return this.db.collection('glucometrias').add(respuesta);
+  agregarGlucometria( respuesta: GlucometriaDiaria) : string{
+    this.db.collection('glucometrias').add(respuesta);
+    return `Se agrego el resultado ${respuesta.valor} correcta mente`;
   }
 
 

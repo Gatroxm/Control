@@ -10,10 +10,10 @@ const routes: Routes = [
     path: '', component: HomeComponent
   },
   {
-    path: 'glucometrias', component:ListarComponent
+    path: 'glucometrias/listar', component:ListarComponent
   },
   {
-    path: 'agregar-glucometria', component: AgregarComponent
+    path: 'glucometrias/agregar', component: AgregarComponent
   }
 ];
 
