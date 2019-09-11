@@ -21,7 +21,7 @@ export class ControlDeavetesService {
 
   agregarGlucometria( respuesta: GlucometriaDiaria) : string{
     this.db.collection('glucometrias').add(respuesta);
-    return `Se agrego el resultado ${respuesta.valor} correcta mente`;
+    return `Se agrego el resultado ${respuesta['valor']} correcta mente`;
   }
 
 
