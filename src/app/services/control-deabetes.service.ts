@@ -24,5 +24,4 @@ export class ControlDeabetesService {
     return `Se agrego el resultado ${respuesta['valor']} correcta mente`;
   }
 
-
 }
