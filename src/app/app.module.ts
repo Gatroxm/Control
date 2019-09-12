@@ -16,7 +16,7 @@ import { environment } from 'src/environments/environment';
 import { ListarComponent } from './components/glucometrias/listar/listar.component';
 import { AgregarComponent } from './components/glucometrias/agregar/agregar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [ControlDeabetesService],
   bootstrap: [AppComponent]

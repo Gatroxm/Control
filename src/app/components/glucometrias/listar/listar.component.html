@@ -11,7 +11,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let calculo of glucometria; let i = index; ">
+                  <tr *ngFor="let calculo of glucometria | paginate: { itemsPerPage: 10, currentPage: paginate }; let i = index; ">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ calculo.valor }}</td>
                     <td>{{ calculo.fecha | date: 'dd/MM/yyyy' }}</td>
@@ -19,6 +19,7 @@
                   </tr>
                 </tbody>
               </table>
+              <pagination-controls (pageChange)="paginate = $event"></pagination-controls>
         </div>
     </div>
 </div>

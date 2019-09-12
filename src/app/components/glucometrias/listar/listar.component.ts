@@ -10,12 +10,13 @@ import { GlucometriaDiaria } from 'src/app/interfaces/control-deabetes.interface
 export class ListarComponent implements OnInit {
 
   public glucometria;
+  public paginate: number = 1;
   constructor( private control: ControlDeabetesService) { }
 
   ngOnInit() {
     this.control.cargarGlucometrias().subscribe( (gluco) => {
       this.glucometria = gluco;
-    })
+    });
   }
 
 }
