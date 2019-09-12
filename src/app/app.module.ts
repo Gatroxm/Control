@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 import { ListarComponent } from './components/glucometrias/listar/listar.component';
 import { AgregarComponent } from './components/glucometrias/agregar/agregar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
   declarations: [

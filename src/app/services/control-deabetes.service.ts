@@ -14,7 +14,7 @@ export class ControlDeabetesService {
 
   cargarGlucometrias() {
 
-    this.itemsCollection = this.db.collection<any>('glucometrias');
+    this.itemsCollection = this.db.collection<any>('glucometrias', ref => ref.orderBy('fecha','desc'));
     return this.itemsCollection.valueChanges();
 
   }

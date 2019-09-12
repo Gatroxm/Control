@@ -11,10 +11,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let calculo of glucometria; let i = index">
+                  <tr *ngFor="let calculo of glucometria; let i = index; ">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ calculo.valor }}</td>
-                    <td>{{ calculo.fecha }}</td>
+                    <td>{{ calculo.fecha | date: 'dd/MM/yyyy' }}</td>
                     <td>{{ calculo.horario }}</td>
                   </tr>
                 </tbody>
