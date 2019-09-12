@@ -17,6 +17,7 @@ import { ListarComponent } from './components/glucometrias/listar/listar.compone
 import { AgregarComponent } from './components/glucometrias/agregar/agregar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FooterComponent,
     HomeComponent,
     ListarComponent,
-    AgregarComponent
+    AgregarComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
