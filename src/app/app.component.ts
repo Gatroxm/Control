@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnChanges {
-  public login: boolean = false;
+  public login: boolean;
   constructor( private auth: AuthService, private router: Router) { 
 
     if (this.auth.estaAutenticado()) {
