@@ -18,6 +18,7 @@ import { AgregarComponent } from './components/glucometrias/agregar/agregar.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     AngularFireStorageModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ChartsModule
   ],
   providers: [ControlDeabetesService],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@
                   <tr *ngFor="let calculo of glucometria | paginate: { itemsPerPage: 10, currentPage: paginate }; let i = index; ">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ calculo.valor }}</td>
-                    <td>{{ calculo.fecha | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ calculo.fecha | date }}</td>
                     <td>{{ calculo.horario }}</td>
                     <td> <a class="btn btn-warning mr-2 d-inline-block">Editar</a> <a class="btn btn-danger d-inline-block">Eliminar</a></td>
                   </tr>
