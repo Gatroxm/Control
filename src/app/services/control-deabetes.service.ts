@@ -13,10 +13,8 @@ export class ControlDeabetesService {
   constructor( private db: AngularFirestore) { }
 
   cargarGlucometrias() {
-
     this.itemsCollection = this.db.collection<any>('glucometrias', ref => ref.orderBy('fecha','desc'));
     return this.itemsCollection.valueChanges();
-
   }
 
   agregarGlucometria( respuesta: GlucometriaDiaria) : string{

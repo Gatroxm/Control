@@ -19,6 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { ChartsModule } from 'ng2-charts';
+import { RegistroComponent } from './components/registro/registro.component';
+import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GlucometriasComponent } from './components/glucometrias/glucometrias.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { ChartsModule } from 'ng2-charts';
     HomeComponent,
     ListarComponent,
     AgregarComponent,
-    LoadingComponent
+    LoadingComponent,
+    RegistroComponent,
+    LoginComponent,
+    GlucometriasComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,8 @@ import { ChartsModule } from 'ng2-charts';
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    ChartsModule
+    ChartsModule, 
+    HttpClientModule
   ],
   providers: [ControlDeabetesService],
   bootstrap: [AppComponent]
