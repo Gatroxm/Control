@@ -17,6 +17,11 @@ export class ControlDeabetesService {
     this.itemsCollection = this.db.collection<any>('glucometrias', ref => ref.where('usuario', '==', uid).orderBy('fecha','asc'));
     return this.itemsCollection.valueChanges();
   }
+  cargarGlucometriasGrafica() {
+    const uid = localStorage.getItem('uid');
+    this.itemsCollection = this.db.collection<any>('glucometrias', ref => ref.where('usuario', '==', uid).orderBy('fecha','desc').limit(10));
+    return this.itemsCollection.valueChanges();
+  }
 
   agregarGlucometria( respuesta: GlucometriaDiaria) : string{
     this.db.collection('glucometrias').add(respuesta);

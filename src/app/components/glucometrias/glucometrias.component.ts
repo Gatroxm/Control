@@ -10,7 +10,7 @@ import { ControlDeabetesService } from 'src/app/services/control-deabetes.servic
   styleUrls: ['./glucometrias.component.css']
 })
 export class GlucometriasComponent implements OnInit {
-
+  public carga: boolean = true;
   constructor(private control: ControlDeabetesService) { }
 
   public barChartOptions: ChartOptions = {
@@ -24,6 +24,7 @@ export class GlucometriasComponent implements OnInit {
       }
     }
   };
+
   public barChartLabels: Label[];
   public fechas = new Array();
   public datos = new Array();
@@ -38,28 +39,20 @@ export class GlucometriasComponent implements OnInit {
   
 
   ngOnInit() {
-    this.control.cargarGlucometrias().subscribe( data => {
-        data.forEach((element,index) => {
+    this.control.cargarGlucometriasGrafica().subscribe( data => {
+        data.forEach((element) => {
           this.fechas.push(element['fecha']);
           this.datos.push(element['valor']);
         });
         this.barChartData = [
           {
             data: this.datos,
-            label: 'glucometrias'
+            label: 'Ultimas 10 glucometrias'
           }
-        ]
+        ];
         this.barChartLabels =  this.fechas;
+        this.carga = false;
     });
-  }
-
-  // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
   }
 
 }

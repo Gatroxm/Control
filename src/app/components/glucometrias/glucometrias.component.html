@@ -1,25 +1,26 @@
-<div class="container my-5">
-        <div class="row">
-            <div class="col-12 my-5 text-center">
-                <app-nav-bar></app-nav-bar>
-            </div>
-            <div class="col-12">
-                <h1>Margen de glucometria diaria</h1>
-                <div>
-                    <div>
-                        <div style="display: block">
-                        <canvas
-                            baseChart
-                            [datasets]="barChartData"
-                            [labels]="barChartLabels"
-                            [options]="barChartOptions"
-                            [plugins]="barChartPlugins"
-                            [legend]="barChartLegend"
-                            [chartType]="barChartType">
-                        </canvas>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mb-5 text-center">
+      <app-nav-bar></app-nav-bar>
     </div>
+    <div class="col-12">
+      <h1>Margen de glucometria en 10 días</h1>
+      <div>
+        <div>
+          <div style="display: block">
+            <canvas
+              baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loading *ngIf="carga"></app-loading>

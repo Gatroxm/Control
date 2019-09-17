@@ -5,11 +5,9 @@
                     (ngSubmit)="onSubmit( registroForm )"
                     #registroForm="ngForm"
                     class="login100-form validate-form flex-sb flex-w">
-    
-                    <span class="login100-form-title p-b-51">
+                    <h1 class="text-center mb-2">
                         Crear nueva cuenta
-                    </span>
-    
+                    </h1>
                      <span *ngIf="registroForm.submitted && registroForm.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
                     <div class=" form-group">
                         <input class="form-control" 
@@ -49,17 +47,20 @@
                     </div>
                     
                     <div class="flex-sb-m w-full p-t-3 p-b-24">
-                        <div class="form-group form-check">
-                            <input [(ngModel)]="recordarme" class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                            <label class="label-checkbox100" for="ckb1">
-                                Recordar mi usuario
-                            </label>
-                        </div>
-    
-                        <div>
-                            <a routerLink="/login" class="txt1">
-                                ¿Ya tienes cuenta? / Ingresar
-                            </a>
+                        <div class="form-group form-check p-0">
+                            <div class="row">
+                                <div class="col">
+                                    <input [(ngModel)]="recordarme" class="input-checkbox100 mr-2" id="ckb1" type="checkbox" name="remember-me">
+                                    <label class="label-checkbox100" for="ckb1">
+                                        Recordar mi usuario
+                                    </label>
+                                </div>
+                                <div class="col text-right">
+                                    <a routerLink="/login" class="txt1">
+                                        ¿Ya tienes cuenta? / Ingresar
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
     
