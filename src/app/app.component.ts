@@ -1,31 +1,22 @@
-import { Component, OnChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnChanges {
+
+export class AppComponent {
   public login: boolean;
-  constructor( private auth: AuthService, private router: Router) { 
-
-    if (this.auth.estaAutenticado()) {
-      this.login = true;
-    } else {
-      this.login = false;
-    }
-
+  constructor( private auth: AuthService ) { 
+    this.isLogin();
   }
-
-  ngOnChanges() {
-
+  isLogin() {
     if (this.auth.estaAutenticado()) {
-      this.login = true;
+      return this.login = true;
     } else {
-      this.login = false;
+      return this.login = false;
     }
-    
   }
-
 }

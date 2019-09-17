@@ -1,5 +1,8 @@
 <div class="container my-5">
     <div class="row">
+        <div class="col-12 my-5 text-center">
+          <app-nav-bar></app-nav-bar>
+        </div>
         <div class="col-12">
             <h1>Ingresar glucomentria diaria</h1>
             <form [formGroup]="forma" (ngSubmit)="guardarCambios()" novalidate="novalidate" class="mb-5">
