@@ -12,5 +12,6 @@ export class UsuarioModule {
   email: string;
   name: string;
   password: string;
+  uid: string;
 
 }

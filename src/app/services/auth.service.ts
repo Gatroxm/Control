@@ -11,6 +11,7 @@ export class AuthService {
   private url ='https://identitytoolkit.googleapis.com/v1';
   private apiKey = 'AIzaSyD0mjfUsg1X5ivBQKdfYlHIm2Pb5AAkKM8';
   userToken: string;
+  public usuario: UsuarioModule;
   constructor( private http: HttpClient) {
     this.leerToken();
   }
@@ -25,8 +26,15 @@ export class AuthService {
       return data;
     }));
   }
-
+  
   logOut() {
+    this.usuario = {
+      'email': '',
+      'name': '',
+      'password': '',
+      'uid': ''
+    }
+    localStorage.removeItem('uid');
     localStorage.removeItem('token');
   }
 

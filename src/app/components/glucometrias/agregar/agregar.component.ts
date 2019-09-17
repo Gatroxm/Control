@@ -20,7 +20,8 @@ export class AgregarComponent implements OnInit {
     this.forma = new FormGroup({
       'valor': new FormControl(null, []),
       'fecha': new FormControl(null, []),
-      'horario': new FormControl()
+      'horario': new FormControl(),
+      'usuario': new FormControl (localStorage.getItem('uid'))
     });
   }
 

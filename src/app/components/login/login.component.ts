@@ -35,8 +35,12 @@ export class LoginComponent implements OnInit {
     // Swal.showLoading();
     this.auth.logIn(this.usuario).subscribe(data => {
       // Swal.close();
+      this.usuario.uid = data['localId'];
+      localStorage.setItem('uid', this.usuario.uid);
+
       if (this.recordarme) {
         localStorage.setItem('email', this.usuario.email);
+        
       }
       this.router.navigateByUrl('home');
     }, (err) => {
