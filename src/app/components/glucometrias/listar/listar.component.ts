@@ -9,15 +9,16 @@ import { GlucometriaDiaria } from 'src/app/interfaces/control-deabetes.interface
 })
 export class ListarComponent implements OnInit {
 
-  public glucometria:GlucometriaDiaria[] = [];
-  public paginate: number = 1;
-  public carga: boolean = true;
+  public glucometria: GlucometriaDiaria[] = [];
+  public paginate = 1;
+  public carga = true;
 
   constructor( private control: ControlDeabetesService) { }
 
   ngOnInit() {
     this.control.cargarGlucometrias().subscribe( (glucos: GlucometriaDiaria[]) => {
-      for (let gluco of glucos) {
+      console.log(glucos);
+      for (const gluco of glucos) {
         this.glucometria.unshift(gluco);
       }
       this.carga = false;

@@ -11,28 +11,22 @@ import { Router } from '@angular/router';
 export class AgregarComponent implements OnInit {
 
   public forma: FormGroup;
-  public save: boolean = false;
   public message: string;
 
   constructor( private control: ControlDeabetesService, private router: Router) { }
 
   ngOnInit() {
     this.forma = new FormGroup({
-      'valor': new FormControl(null, []),
-      'fecha': new FormControl(null, []),
-      'horario': new FormControl(),
-      'usuario': new FormControl (localStorage.getItem('uid'))
+      valor: new FormControl(null, []),
+      fecha: new FormControl(null, []),
+      horario: new FormControl(),
+      usuario: new FormControl (localStorage.getItem('uid'))
     });
   }
 
   guardarCambios() {
-    this.message = this.control.agregarGlucometria(this.forma.value);
-    this.save = true;
+    this.control.agregarGlucometria(this.forma.value);
     this.router.navigate(['glucometrias/listar']);
-  }
-
-  cerrarMessage() {
-    this.save = false;
   }
 
 }
