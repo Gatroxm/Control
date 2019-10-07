@@ -10,12 +10,11 @@ import { ControlDeabetesService } from 'src/app/services/control-deabetes.servic
   styleUrls: ['./glucometrias.component.css']
 })
 export class GlucometriasComponent implements OnInit {
-  public carga: boolean = true;
+  public carga = true;
   constructor(private control: ControlDeabetesService) { }
 
   public barChartOptions: ChartOptions = {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
     scales: { xAxes: [{}], yAxes: [{}] },
     plugins: {
       datalabels: {
@@ -36,13 +35,11 @@ export class GlucometriasComponent implements OnInit {
     { data: [], label: '' }
   ];
 
-  
-
   ngOnInit() {
     this.control.cargarGlucometriasGrafica().subscribe( data => {
         data.forEach((element) => {
-          this.fechas.push(element['fecha']);
-          this.datos.push(element['valor']);
+          this.fechas.push(element.fecha);
+          this.datos.push(element.valor);
         });
         this.barChartData = [
           {
